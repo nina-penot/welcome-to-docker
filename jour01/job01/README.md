@@ -25,7 +25,7 @@ docker pull (doit avoir le nom de l'image)
 
 docker images liste les images disponibles mais ne permet pas de les récupérer
 
-Pour arrêter l'image il faut utiliser docker stop (nom du container)
+Pour arrêter un container il faut utiliser docker stop (nom du container)
 ![alt text](image-6.png)
 
 Pour supprimer un container : docker rm (nom du container)
