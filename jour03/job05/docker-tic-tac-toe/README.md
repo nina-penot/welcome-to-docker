@@ -15,3 +15,12 @@ Commande docker ps :
 
 Screenshot du jeu dans le navigateur :
 ![alt text](./images/website.png)
+
+Screenshot du contenu du container dans la console :
+![alt text](./images/dockerexec_container.png)
+
+Screenshot du contenu du container dans Docker Desktop :
+![alt text](./images/dockerdesktop_cont.png)
+
+Screenshot du contenu du volume dans Docker Desktop : 
+![alt text](./images/dockerdesktop_volume.png)
