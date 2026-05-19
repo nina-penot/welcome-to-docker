@@ -4,7 +4,9 @@ FROM php:8.2-apache
 COPY index.html /var/www/html/
 # Copier save.php et results.json au même endroit
 # (ce sera le futur point de montage du volume)
+RUN a2enmod rewrite
 COPY save.php /var/www/html/
+COPY .htaccess /var/www/html/
 COPY results.json /var/www/html/
 # Apache tourne sous l'utilisateur www-data, qui doit
 # pouvoir écrire dans results.json
