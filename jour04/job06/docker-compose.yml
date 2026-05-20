@@ -2,27 +2,34 @@ services:
   database:
     image: mysql:8
     environment:
-      DB_HOST: containername
+      MYSQL_ROOT_PASSWORD: mypassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+
+  backend:
+    build: ./backend
+    depends_on:
+      - database
+    environment:
+      DB_HOST: database
       DB_USER: myuser
       DB_PASSWORD: mypassword
       DB_NAME: mydb
     ports:
-      - "3306:3306"
-
-  backend:
-    build: ./api
-    depends_on: [database]
-    ports:
       - "3000:3000"
-    volumes:
-      - db_data:/var/lib/mysql
 
   nginx:
     image: nginx:alpine
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
     ports:
       - "8080:8080"
 
   adminer:
+    image: adminer
     ports:
       - "8081:8081"
 

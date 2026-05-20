@@ -15,6 +15,7 @@ function connectToDatabase() {
     connection.connect((err) => {
         if (err) {
             console.error('Error connecting to database. Retrying in 5 seconds...', err);
+            console.log("Your config : ", dbConfig, "and env test:", process.env.DB_HOST);
             setTimeout(connectToDatabase, 5000); // Réessayer après 5 secondes
         } else {
             console.log('Connected to database');
