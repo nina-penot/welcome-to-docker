@@ -1,26 +1,26 @@
 Capture d'écran de la commande docker images :
-![alt text](./images/dockerimages.png)
+![alt text](./images/01-dockerimages.png)
 
 Commande docker volume create game-results :
-![alt text](./images/dockervolumecreate.png)
+![alt text](./images/02-dockervolumecreate.png)
 
 Commande docker volume ls :
-![alt text](./images/dockervolumels.png)
+![alt text](./images/03-dockervolumels.png)
 
 Commande docker run : 
-![alt text](./images/dockerrun.png)
+![alt text](./images/04-dockerrun.png)
 
 Commande docker ps : 
-![alt text](./images/dockerps.png)
+![alt text](./images/05-dockerps.png)
 
 Screenshot du jeu dans le navigateur :
-![alt text](./images/website.png)
+![alt text](./images/06-website.png)
 
 Screenshot du contenu du container dans la console :
-![alt text](./images/dockerexec_container.png)
+![alt text](./images/07-dockerexec_container.png)
 
 Screenshot du contenu du container dans Docker Desktop :
-![alt text](./images/dockerdesktop_cont.png)
+![alt text](./images/08-dockerdesktop_cont.png)
 
 Screenshot du contenu du volume dans Docker Desktop : 
-![alt text](./images/dockerdesktop_volume.png)
+![alt text](./images/09-dockerdesktop_volume.png)
