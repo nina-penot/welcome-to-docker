@@ -4,6 +4,7 @@ services:
     command: sh -c "npm install && npm run dev"
     environment:
       CHOKIDAR_USEPOLLING: true
+      VITE_API_URL: ${VITE_API_URL}
     working_dir: /app
     ports:
       - "5173:5173"
@@ -18,6 +19,12 @@ services:
       db:
         condition: service_healthy
     working_dir: /app
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_NAME: ${DB_NAME}
+      FRONTEND_URL: ${FRONTEND_URL}
     volumes:
       - ./backend:/app
       - /app/node_modules
@@ -27,10 +34,10 @@ services:
   db:
     image: mysql:8
     environment:
-      MYSQL_ROOT_PASSWORD: pass
-      MYSQL_DATABASE: dbtest
-      MYSQL_USER: dev
-      MYSQL_PASSWORD: pass
+      MYSQL_ROOT_PASSWORD: ${DB_PASS}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 20s

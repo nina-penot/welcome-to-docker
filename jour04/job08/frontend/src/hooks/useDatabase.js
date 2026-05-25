@@ -9,20 +9,26 @@ export default function useDatabase() {
 
     async function getApi() {
         setLoading(true);
+        const URL = import.meta.env.VITE_API_URL;
         try {
-
-            const response = await fetch("/db-test", {
+            //console.log(import.meta.env);
+            //console.log("my env url", URL);
+            //console.log("chokidar", import.meta.env.CHOKIDAR_USEPOLLING);
+            const response = await fetch(URL + "/db-test", {
                 method: "GET"
             });
+
+            if (!response.ok) {
+                console.log("response not ok!");
+                throw { status: response.status, message: data.error || 'Erreur' };
+            }
 
             console.log("res", response);
             //
             //console.log("test", response.json());
             const mydata = await response.json();
             console.log("data", mydata);
-            if (!response.ok) {
-                throw { status: response.status, message: data.error || 'Erreur' };
-            }
+
             console.log("mydata ", mydata);
 
             setData(mydata);

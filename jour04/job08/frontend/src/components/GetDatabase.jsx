@@ -5,7 +5,7 @@ export default function GetDatabase() {
 
     const { data, loading, error, setRefecth } = useDatabase();
 
-    let message = error ? "ERROR: " + error : "Database has loaded, check your console.";
+    let message = error ? "ERROR: " + error : "Database has loaded : " + data.status;
 
     useEffect(() => {
         if (loading) {
